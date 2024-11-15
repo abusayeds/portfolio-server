@@ -8,13 +8,17 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: [
+      "https://my-portfolio-iota-sepia-63.vercel.app",
+      "http://localhost:5173",
+    ],
+
     credentials: true,
   })
 );
 app.use("/", router);
 app.get("/", (req: Request, res: Response) => {
-  res.send("Travel Tips Server is Running !! ");
+  res.send("Portfolio server is Running !! ");
 });
 app.use(globalErrorHandler);
 export default app;
